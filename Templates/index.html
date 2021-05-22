@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+	<title>Imagination</title>
+
+	<link rel="shortcut icon" href="{% static 'img/aime.png' %}" type="png"> 
+
+	<link rel="stylesheet" type="text/css" href="{% static 'dist/css/bootstrap.min.css' %} ">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'dic/style.css' %}">
+</head>
+<body id="all">
+	<div class="container-fluid p-0 m-0 king">
+		<div class="container-fluid toolbar">
+			<p class="text-light"><button onclick="to_main()" id="bnt" class="bn"><i class="fas fa-arrow-left text-light"></i></button> Imagination</p>
+			<button class="bntt" onclick="passd()"><i class="fas fa-bars text-light"></i></button>
+		</div>
+		
+		<div class="container-fluid mt-0 covery p-0" id="main">
+	      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 p-0 m-0 g-3">
+
+	      		{% for db in db1 %}
+	      		<div class="col col-6">
+					<div class="img" style="background-image: url({{db.image.url}} );" onclick="to_quot('{{db.qout}}', '{{db.image.url}}', '{{db.name}}')">
+						<div class="about">
+							<p class="type">{{db.category}}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
+
+				<div class="col col-6">
+					<div class="img" style="background-image: url({% static 'img/pex3.jpg' %});" onclick="to_quot('The most valuable possession you can own is an open heart. The most powerful weapon you can be is an instrument of peace.', '{% static "img/pex3.jpg" %}', 'Carlos Santana')" >
+						<div class="about">
+							<p class="type">Peace</p>
+						</div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<div class="img" style="background-image: url({% static 'img/mubiru.jpg' %} );" onclick="to_quot('God knows all your pain just be faithful, God will relieve it.', '{% static "img/mubiru.jpg" %}', 'Mubiru Ali')">
+						<div class="about">
+							<p class="type">Religious</p>
+						</div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<div class="img" style="background-image: url({% static 'img/m1.jpg' %}" onclick="to_quot('In our pain, worries and suffering, we should just let something out to get a releave, like tears.', '{% static "img/m1.jpg" %}')">
+						<div class="about">
+							<p class="type">Encouraging</p>
+						</div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<div class="img" style="background-image: url({% static 'img/love.jpg' %});" onclick="to_quot('We are born alone, we live alone, we die alone. Only through our love and friendship can we create the illusion for the moment that we are not alone.', '{% static "img/love.jpg" %}')">
+						<div class="about">
+							<p class="type">Love</p>
+						</div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<div class="img" style="background-image: url({% static 'img/lion.jpg' %});" onclick="to_quot('Being brave is not the absence of fear. Being brave is having that fear but finding a way through it', '{% static "img/lion.jpg" %}', 'Bear Grylls')">
+						<div class="about">
+							<p class="type">Encouaraging</p>
+						</div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<div class="img" style="background-image: url({% static 'img/math.jpg' %});" onclick="to_quot('I know of no more encouraging fact than the unquestionable ability of man to elevate his life by conscious endeavor.', '{% static "img/math.jpg" %}', 'Mathias')">
+						<div class="about">
+							<p class="type">Encouaragment</p>
+						</div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<div class="img" style="background-image: url({% static 'img/forest.jpg' %});" onclick="to_quot('Wherever you go, no matter what the weather, always bring your own sunshine.', '{% static "img/forest.jpg" %}', 'Anthony J. D Angelo')">
+						<div class="about">
+							<p class="type">Nature</p>
+						</div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<div class="img" style="background-image: url({% static 'img/slum.jpg' %});" onclick="to_quot('Life is a dream for the wise, a game for the fool, a comedy for the rich, a tragedy for the poor.', '{% static "img/slum.jpg" %}', 'Sholom Aleichem')">
+						<div class="about">
+							<p class="type">Motivational</p>
+						</div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<div class="img" style="background-image: url({% static 'img/road.jpg' %});" onclick="to_quot('A great accomplishment should not be the end of the road, just the starting point for the next leap forward.', '{% static "img/road.jpg" %}', 'Harvey Mackay')">
+						<div class="about">
+							<p class="type">motional</p>
+						</div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<div class="img" style="background-image: url({% static 'img/dog.jpg' %});" onclick="to_quot('Pets are humanizing. They remind us we have an obligation and responsibility to preserve and nurture and care for all life.', '{% static "img/dog.jpg" %}', 'James Cromwell')">
+						<div class="about">
+							<p class="type">Pets</p>
+						</div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<div class="img" style="background-image: url({% static 'img/lover.jpg' %});" onclick="to_quot('Time is too slow for those who wait, too swift for those who fear, too long for those who grieve, too short for those who rejoice, but for those who love, time is eternity.', '{% static "img/lover.jpg" %}', 'Henry Van Dyke')">
+						<div class="about">
+							<p class="type">Love</p>
+						</div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<div class="img" style="background-image: url({% static 'img/drop.jpg' %});" onclick="to_quot('Life is not always really glamorous and fabulous. It is about encouraging people to go back to natural beauty.', '{% static "img/drop.jpg" %}', 'Zoe Foster Blake')">
+						<div class="about">
+							<p class="type">Know</p>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="quot" id="sub-main" style="background-image: url('pex3.jpg');">
+			<div class="mask-bg">
+				<p class="qts" id="qout">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				</p>
+				<p class="writer">Written by <i><span id="writer">Mathais</span></i></p>
+			</div>
+		</div>
+
+		<div class="password" id="pwd">
+			<div class="pwd">
+				<p class="dark">Password, please.</p>
+					<input type="password" class="form-control form-sub" id="password" name="">
+					<div class="p-0 m-0 d-flex justify-content-end">
+						<button class="btn btn-primary mt-2 submit" onclick="passwordor()">submit</button>
+					</div>
+			</div>
+		</div>
+
+		<div class="info" id="tell">
+			<p class="p-0 m-0 dark lit"><i class="fas fa-exclamation-triangle dark lit"></i> <span class="what" id="what">Wrong password</span></p>
+		</div>
+
+		<div class="upload" id="uplo">
+			<h4 class="text-center mt-3 dark">Upload quote</h4>
+			<div class="container-fluid mt-5">
+				
+				<form class="form-group" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					{{fm.name}}	
+					{{fm.category}}
+					{{fm.image}}
+					{{fm.qout}}
+						<p class="text-light mt-2"><i class="fas fa-exclamation-triangle"></i> Please, no <span class="text-info">CONJUCTIONS</p>
+					<div class="container-fluid d-flex justify-content-end">
+						<button class="btn btn-primary mt-5 submit">submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="menu" id="menu">
+			<ul>
+				<li onclick="the_input()">Create</li>
+				<li>About</li>
+			</ul>
+		</div>
+
+
+
+	</div>
+
+	<script type="text/javascript" src="{% static 'dist/js/bootstrap.bundle.min.js' %} "></script>
+	<script type="text/javascript" src='{% static "dic/main.js" %}'></script>
+	
+</body>
+</html>
